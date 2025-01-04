@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "479262100673",
+    "project_id": "book-voices",
+    "storage_bucket": "book-voices.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479262100673:android:c0f21f310e5af465be5840",
+        "android_client_info": {
+          "package_name": "com.example.book_voices"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE_igDqfMrcJExqaliSUfNkLD14g1A-kQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479262100673:android:a62e38bdc73c0c66be5840",
+        "android_client_info": {
+          "package_name": "com.example.bookvoices"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE_igDqfMrcJExqaliSUfNkLD14g1A-kQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
