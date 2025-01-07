@@ -4,11 +4,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../handle_exceptions/handleFirebaseAuthException.dart';
 
 class AuthHelper {
-  static Future<User> signInWithEmailAndPassword(
+  final FirebaseAuth firebaseAuth;
+
+  AuthHelper(this.firebaseAuth);
+
+  Future<User> signInWithEmailAndPassword(
       {required String email, required String password}) async {
     try {
-      UserCredential user = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: email, password: password);
+      UserCredential user = await firebaseAuth.signInWithEmailAndPassword(
+          email: email, password: password);
       return user.user!;
     } on FirebaseAuthException catch (e) {
       throw (ServerFailure(
@@ -16,11 +20,11 @@ class AuthHelper {
     }
   }
 
-  static Future<User> registerWithEmailAndPassword(
+  Future<User> registerWithEmailAndPassword(
       {required String email, required String password}) async {
     try {
-      UserCredential user = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email, password: password);
+      UserCredential user = await firebaseAuth.createUserWithEmailAndPassword(
+          email: email, password: password);
       return user.user!;
     } on FirebaseAuthException catch (e) {
       throw (ServerFailure(
@@ -28,7 +32,7 @@ class AuthHelper {
     }
   }
 
-  static Future<void> signOut() async {
-    await FirebaseAuth.instance.signOut();
+  Future<void> signOut() async {
+    await firebaseAuth.signOut();
   }
 }

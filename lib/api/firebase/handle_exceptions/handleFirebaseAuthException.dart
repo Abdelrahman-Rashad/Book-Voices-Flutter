@@ -13,9 +13,11 @@ class handleFirebaseAuthException {
         return 'لا يوجد مستخدم مسجل بهذا البريد الإلكتروني.';
 
       case 'wrong-password':
+        return 'كلمة المرور غير صحيحة. يرجى المحاولة مرة أخرى.';
+
       case 'INVALID_LOGIN_CREDENTIALS':
       case 'invalid-credential':
-        return 'كلمة المرور غير صحيحة. يرجى المحاولة مرة أخرى.';
+        return 'البريد الإلكتروني المدخل غير مسجل. يرجى التحقق من البريد الإلكتروني أو إنشاء حساب جديد.';
 
       case 'too-many-requests':
         return 'عدد كبير جدًا من المحاولات. يرجى الانتظار قبل المحاولة مجددًا.';

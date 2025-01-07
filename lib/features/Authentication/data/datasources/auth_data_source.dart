@@ -9,10 +9,11 @@ abstract class AuthDataSource {
 }
 
 class AuthDataSourceImpl implements AuthDataSource {
+  AuthHelper authHelper = AuthHelper(FirebaseAuth.instance);
   @override
   Future<User> login(String email, String password) async {
     try {
-      return await AuthHelper.signInWithEmailAndPassword(
+      return await authHelper.signInWithEmailAndPassword(
           email: email, password: password);
     } on ServerFailure {
       rethrow;
@@ -22,7 +23,7 @@ class AuthDataSourceImpl implements AuthDataSource {
   @override
   Future<User> register(String email, String password) async {
     try {
-      return await AuthHelper.registerWithEmailAndPassword(
+      return await authHelper.registerWithEmailAndPassword(
           email: email, password: password);
     } on ServerFailure {
       rethrow;
@@ -31,6 +32,6 @@ class AuthDataSourceImpl implements AuthDataSource {
 
   @override
   Future<void> logout() async {
-    await AuthHelper.signOut();
+    await authHelper.signOut();
   }
 }
