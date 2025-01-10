@@ -4,14 +4,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-
 import 'auth_helper_unit_test.mocks.dart';
 
 class MockUser extends Mock implements User {}
 
 class MockServerFailure extends Mock implements ServerFailure {}
 
-@GenerateMocks([FirebaseAuth, UserCredential, User])
+@GenerateMocks([FirebaseAuth, UserCredential])
 void main() {
   MockFirebaseAuth? mockFirebaseAuth;
   MockUserCredential? mockUserCredential;
